@@ -1,23 +1,23 @@
 # Mancinella Frontend (React + Vite)
 
-Includes:
-- WebSocket wrapper (src/ws.js)
-- Simple WebRTC signalling helpers for voice chat and screen sharing (src/webrtc.js)
-- Basic UI (src/App.jsx)
+Включает:
+- Обёртка для WebSocket (src/ws.js)
+- Простые помощники для WebRTC сигнализации для голосового чата и демонстрации экрана (src/webrtc.js)
+- Базовый UI (src/App.jsx)
 
-How to run (locally):
-1. Unzip mancinella-frontend.zip and `cd mancinella-frontend`.
-2. Install dependencies:
-   - Using npm: `npm install`
-   - or using pnpm/yarn.
-3. Set Vite env var for backend WS if needed:
-   - create `.env` with `VITE_WS_URL=ws://localhost:8000/ws`
-4. Start dev server:
+Как запустить (локально):
+1. Распакуйте mancinella-frontend.zip и выполните `cd mancinella-frontend`.
+2. Установите зависимости:
+   - Используя npm: `npm install`
+   - или используя pnpm/yarn.
+3. Установите переменную окружения Vite для бэкенда WS при необходимости:
+   - создайте `.env` с `VITE_WS_URL=ws://localhost:8000/ws`
+4. Запустите dev-сервер:
    - `npm run dev`
-5. Open browser at the address printed by Vite (usually http://localhost:5173).
+5. Откройте браузер по адресу, указанному Vite (обычно http://localhost:5173).
 
-Notes:
-- This frontend expects a WebSocket-based signaling server that forwards messages between peers in the same room.
-- The code uses a simple JSON protocol (types: join, offer, answer, ice, chat). Adapt to your backend messages if they differ.
-- For multi-peer rooms this implements mesh-style connections (each peer connects to each other peer).
-- Screen sharing uses `getDisplayMedia` and adds tracks to existing RTCPeerConnections.
+Примечания:
+- Этот фронтенд ожидает сервер сигнализации на основе WebSocket, который пересылает сообщения между пирами в одной комнате.
+- Код использует простой JSON-протокол (типы: join, offer, answer, ice, chat). Адаптируйте под сообщения вашего бэкенда, если они отличаются.
+- Для многопользовательских комнат реализованы mesh-соединения (каждый пир подключается к каждому другому пиру).
+- Демонстрация экрана использует `getDisplayMedia` и добавляет треки к существующим RTCPeerConnections.
